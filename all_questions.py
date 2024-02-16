@@ -155,43 +155,43 @@ def question4():
     answer["a"] = ['binary','qualitative','ordinal']
 
     # Explain if there is more than one interpretation. Repeat for the other questions. At least five words that form a sentence.
-    answer["a: explain"] = "Considering Time in AM/PM as Binary"
+    answer["a: explain"] = "We consider AM and PM as binary"
 
     answer["b"] = ['continuous','quantitative','ratio']
-    answer["b: explain"] = ""
+    answer["b: explain"] = "Brightness can be measured on a continuous scale and is quantitative because it involves numerical values. It is ratio because it has a true zero point (absence of brightness)."
 
     answer["c"] = ['discrete','qualitative','ordinal']
-    answer["c: explain"] = ""
+    answer["c: explain"] = "people are providing judgments within specific categories, It is qualitative because it involves judgments rather than numerical measurements, and ordinal because there is an inherent order,but  but the differences between categories may not be equal. "
 
     answer["d"] = ['continuous','quantitative','ratio']
-    answer["d: explain"] = ""
+    answer["d: explain"] = "Angles can be measured on a continuous scale and are quantitative because they involve numerical values. It is ratio because there is a true zero point (0 degrees)."
 
     answer["e"] = ['discrete','qualitative','ordinal']
-    answer["e: explain"] = ""
+    answer["e: explain"] = "The medals are discrete categories, qualitative because they represent categories rather than numerical values, and ordinal because there is an inherent order (bronze < silver < gold)."
 
     answer["f"] = ['continuous','quantitative','interval']
-    answer["f: explain"] = "If sea level is not considered as an arbitrary origin,It can also be ratio"
+    answer["f: explain"] = "Height can be measured on a continuous scale and is quantitative because it involves numerical values. It is interval because there is no true zero point (height can be below sea level)."
 
     answer["g"] = ['discrete','quantitative','ratio']
-    answer["g: explain"] = ""
+    answer["g: explain"] = "The number of patients is discrete and quantitative because it involves numerical values representing counts. It is ratio because it has a true zero point (0 patients)."
 
     answer["h"] = ['discrete','qualitative','nominal']
-    answer["h: explain"] = ""
+    answer["h: explain"] = "ISBN numbers are discrete identifiers and are qualitative because they represent categories rather than numerical values. They are nominal because there is no inherent order between different ISBN numbers."
 
     answer["i"] = ['discrete','qualitative','ordinal']
-    answer["i: explain"] = ""
+    answer["i: explain"] = "These categories represent discrete qualitative attributes of objects' ability to pass light, with an inherent order from opaque (not allowing light to pass) to translucent (allowing partial light to pass) to transparent (allowing all light to pass)."
 
     answer["j"] = ['discrete','qualitative','ordinal']
-    answer["j: explain"] = ""
+    answer["j: explain"] = "Military ranks are discrete categories, qualitative because they represent categories rather than numerical values, and ordinal because there is an inherent order (e.g., private, corporal, sergeant)."
 
     answer["k"] = ['continuous','quantitative','ratio']
-    answer["k: explain"] = "It can be interval attribute as well if distance of 0 from the center of campus is considered as an arbitrary origin"
+    answer["k: explain"] = "Distance can be measured on a continuous scale and is quantitative because it involves numerical values. It is ratio because there is a true zero point (distance can be 0 from the center of campus)."
 
     answer["l"] = ['continuous','quantitative','ratio']
-    answer["l: explain"] = ""
+    answer["l: explain"] = "Density can be measured on a continuous scale and is quantitative because it involves numerical values. It is ratio because it has a true zero point (0 g/cm³ represents absence of density)."
 
     answer["m"] = ['discrete','qualitative','nominal']
-    answer["m: explain"] = ""
+    answer["m: explain"] = "Coat check numbers are discrete identifiers and are qualitative because they represent categories rather than numerical values. They are nominal because there is no inherent order between different coat check numbers."
 
     return answer
 
@@ -206,17 +206,17 @@ def question5():
 
     # string: one of 'Model 1' or 'Model 2'
     explain["a"] = "Model 2"
-    explain["a explain"] = "Model 1 has high accuracy on A but accuracy drops on B which indicates overfitting, But for Model 2 accuracy on both Dataset A and B are almost same indicating better generalization to new data. "
+    explain["a explain"] = "While Model 2's accuracy on both Datasets A and B is nearly equal, suggesting improved generalisation to new data, Model 1's accuracy on A is high but decreases on B, suggesting overfitting."
 
     # string: one of 'Model 1' or 'Model 2'
     explain["b"] = "Model 2"
-    explain["b explain"] = "Though accuracy drops slightly Model 2 is still preferable due to better generalization observed earlier and it is less likely to overfit."
+    explain["b explain"] = "Even with a modest decrease in accuracy, Model 2 is still preferred since it exhibits better generalisation than the previous model and is less prone to overfitting."
 
     explain["c similarity"] = "Regularization"
-    explain["c similarity explain"] = "Both techniques aims to reduce overfitting by penalizing models for complexity."
+    explain["c similarity explain"] = "By penalising models for complexity, both strategies seek to decrease overfitting."
 
     explain["c difference"] = "Specificity"
-    explain["c difference explain"] = "MDL aims for a model that requires fewer bits to describe,whereas pessimistic error aims to adjust tree error to avoid complex decision tree."
+    explain["c difference explain"] = "MDL seeks to represent a model with fewer bits needed, while pessimistic error tries to modify tree error to prevent complicated decision trees."
 
     return explain
 
