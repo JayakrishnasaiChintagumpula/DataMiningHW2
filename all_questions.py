@@ -49,6 +49,7 @@ def question1():
     level2_left["weight_loss"] = -1.0
     level2_left["weight_loss_info_gain"] = 0.1711
 
+    
     level2_right["radon"] = 1.0
     level2_right["radon_info_gain"] = 0.7219
 
@@ -56,23 +57,21 @@ def question1():
     level2_right["cough_info_gain"] = 0.3219
 
     level2_right["weight_loss"] = -1.0
-    level2_right["weight_loss_info_gain"] = 0.0.1711
+    level2_right["weight_loss_info_gain"] = 0.1711
 
     answer["level1"] = level1
     answer["level2_left"] = level2_left
     answer["level2_right"] = level2_right
 
-  
-    tree = u.BinaryTree("smoking")  
+    tree=u.BinaryTree("smoking")
     A=tree.insert_left("cough")
     B=tree.insert_right("radon")
     A.insert_left("Yes")
     A.insert_right("No")
     B.insert_left("Yes")
     B.insert_right("No")
-    answer["tree"] = tree
+    answer["tree"] = tree  
     answer["training_error"] = 0.0  
-
     return answer
 
 
@@ -84,10 +83,12 @@ def question2():
 
     # Answers are floats
     answer["(a) entropy_entire_data"] = 1.425
+    
     # Infogain
-    answer["(b) x <= 0.2"] = 0.177
-    answer["(b) x <= 0.7"] = 0.355
-    answer["(b) y <= 0.6"] = 0.347
+    answer["(b) x < 0.2"] = 0.177
+    answer["(b) x < 0.7"] = 0.355
+    answer["(b) y < 0.6"] = 0.347
+
     # choose one of 'x=0.2', 'x=0.7', or 'x=0.6'
     answer["(c) attribute"] = "x<0.7"  
 
@@ -106,6 +107,7 @@ def question2():
     B.insert_right("A")
     E.insert_left("A")
     E.insert_right("C")
+    
     answer["(d) full decision tree"] = tree
 
     return answer
@@ -129,7 +131,7 @@ def question3():
     answer["(f) attr for splitting"] = "Car type"
 
     # Explanatory text string
-    answer["(f) explain choice"] = "Among all the attributes Car type has the least gini value"
+    answer["(f) explain choice"] = "Car type has the lowest gini among the three attributes(Gender,Car type and Shirt)"
 
     return answer
 
@@ -153,43 +155,43 @@ def question4():
     answer["a"] = ['binary','qualitative','ordinal']
 
     # Explain if there is more than one interpretation. Repeat for the other questions. At least five words that form a sentence.
-    answer["a: explain"] = "We consider AM and PM as binary"
+    answer["a: explain"] = "Considering Time in AM/PM as Binary"
 
     answer["b"] = ['continuous','quantitative','ratio']
-    answer["b: explain"] = "Brightness can be measured on a continuous scale and is quantitative because it involves numerical values. It is ratio because it has a true zero point (absence of brightness)."
+    answer["b: explain"] = ""
 
     answer["c"] = ['discrete','qualitative','ordinal']
-    answer["c: explain"] = "people are providing judgments within specific categories. It is qualitative because it involves judgments rather than numerical measurements, and ordinal because there is an inherent order,but the differences between categories may not be equal."
+    answer["c: explain"] = ""
 
     answer["d"] = ['continuous','quantitative','ratio']
-    answer["d: explain"] = "Angles can be measured on a continuous scale and are quantitative because they involve numerical values. It is ratio because there is a true zero point (0 degrees)"
+    answer["d: explain"] = ""
 
     answer["e"] = ['discrete','qualitative','ordinal']
-    answer["e: explain"] = "The medals are discrete categories, qualitative because they represent categories rather than numerical values, and ordinal because there is an inherent order (bronze < silver < gold)."
+    answer["e: explain"] = ""
 
     answer["f"] = ['continuous','quantitative','interval']
-    answer["f: explain"] = "Height can be measured on a continuous scale and is quantitative because it involves numerical values. It is interval because there is no true zero point (height can be below sea level)."
+    answer["f: explain"] = "If sea level is not considered as an arbitrary origin,It can also be ratio"
 
     answer["g"] = ['discrete','quantitative','ratio']
-    answer["g: explain"] = "The number of patients is discrete and quantitative because it involves numerical values representing counts. It is ratio because it has a true zero point (0 patients)."
+    answer["g: explain"] = ""
 
     answer["h"] = ['discrete','qualitative','nominal']
-    answer["h: explain"] = "ISBN numbers are discrete identifiers and are qualitative because they represent categories rather than numerical values. They are nominal because there is no inherent order between different ISBN numbers."
+    answer["h: explain"] = ""
 
     answer["i"] = ['discrete','qualitative','ordinal']
-    answer["i: explain"] = "These categories represent discrete qualitative attributes of objects' ability to pass light, with an inherent order from opaque (not allowing light to pass) to translucent (allowing partial light to pass) to transparent (allowing all light to pass)."
+    answer["i: explain"] = ""
 
     answer["j"] = ['discrete','qualitative','ordinal']
-    answer["j: explain"] = "Military ranks are discrete categories, qualitative because they represent categories rather than numerical values, and ordinal because there is an inherent order (e.g., private, corporal, sergeant)."
+    answer["j: explain"] = ""
 
     answer["k"] = ['continuous','quantitative','ratio']
-    answer["k: explain"] = "Distance can be measured on a continuous scale and is quantitative because it involves numerical values. It is ratio because there is a true zero point (distance can be 0 from the center of campus)."
+    answer["k: explain"] = "It can be interval attribute as well if distance of 0 from the center of campus is considered as an arbitrary origin"
 
     answer["l"] = ['continuous','quantitative','ratio']
-    answer["l: explain"] = "Density can be measured on a continuous scale and is quantitative because it involves numerical values. It is ratio because it has a true zero point (0 g/cm³ represents absence of density)."
+    answer["l: explain"] = ""
 
     answer["m"] = ['discrete','qualitative','nominal']
-    answer["m: explain"] = "Coat check numbers are discrete identifiers and are qualitative because they represent categories rather than numerical values. They are nominal because there is no inherent order between different coat check numbers."
+    answer["m: explain"] = ""
 
     return answer
 
@@ -204,17 +206,17 @@ def question5():
 
     # string: one of 'Model 1' or 'Model 2'
     explain["a"] = "Model 2"
-    explain["a explain"] = "While Model 2's accuracy on both Datasets A and B is nearly equal, suggesting improved generalisation to new data, Model 1's accuracy on A is high but decreases on B, suggesting overfitting."
+    explain["a explain"] = "Model 1 has high accuracy on A but accuracy drops on B which indicates overfitting, But for Model 2 accuracy on both Dataset A and B are almost same indicating better generalization to new data. "
 
     # string: one of 'Model 1' or 'Model 2'
     explain["b"] = "Model 2"
-    explain["b explain"] = "Even with a modest decrease in accuracy, Model 2 is still preferred since it exhibits better generalisation than the previous model and is less prone to overfitting."
+    explain["b explain"] = "Though accuracy drops slightly Model 2 is still preferable due to better generalization observed earlier and it is less likely to overfit."
 
     explain["c similarity"] = "Regularization"
-    explain["c similarity explain"] = "Both strategies penalise models for complexity in an effort to lessen overfitting."
+    explain["c similarity explain"] = "Both techniques aims to reduce overfitting by penalizing models for complexity."
 
     explain["c difference"] = "Specificity"
-    explain["c difference explain"] = "MDL seeks to represent a model with fewer bits needed, while pessimistic error tries to modify tree error to prevent complicated decision trees."
+    explain["c difference explain"] = "MDL aims for a model that requires fewer bits to describe,whereas pessimistic error aims to adjust tree error to avoid complex decision tree."
 
     return explain
 
@@ -287,4 +289,3 @@ if __name__ == "__main__":
     answers["q7"] = question7()
 
     u.save_dict("answers.pkl", answers)
-
