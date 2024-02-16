@@ -131,7 +131,7 @@ def question3():
     answer["(f) attr for splitting"] = "Car type"
 
     # Explanatory text string
-    answer["(f) explain choice"] = "Car type has the lowest gini among the three attributes(Gender,Car type and Shirt)"
+    answer["(f) explain choice"] = "Among all the other attributes Car type has the lowest gini value"
 
     return answer
 
@@ -269,8 +269,6 @@ def question7():
     answer["d, gain ratio, ID"] = 0.231
     answer["e, gain ratio, Handedness"] = 0.531
 
-    # string: one of 'ID' or 'Handedness' based on gain ratio
-    # choose the attribute with the largest gain ratio
     answer["f, which attrib"] = "Handedness"
 
     return answer
